@@ -1,4 +1,6 @@
 from sklearn.linear_model import LinearRegression,Lasso,Ridge,ElasticNet
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
 from src.exception import CustomException
 from src.logger import logging
 
@@ -29,7 +31,9 @@ class ModelTrainer:
                 'LinearRegression':LinearRegression(),
                 'Lasso':Lasso(),
                 'Ridge':Ridge(),
-                'ElasticNet':ElasticNet()
+                'ElasticNet':ElasticNet(),
+                'RandomForestRegressor':RandomForestRegressor(),
+                'DecisionTreeRegressor' : DecisionTreeRegressor()
             }
 
             model_report:dict = evaluate_model(X_train,y_train,X_test,y_test,models)
